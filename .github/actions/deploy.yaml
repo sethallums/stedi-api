@@ -58,7 +58,7 @@ jobs:
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
-    # Push the Docker image to Google Container Registry -- MADE CHANGE TO THE PUSH LOCATION BELOW
+    # Pushing the Docker image to Google Container Registry -- MADE CHANGE TO THE PUSH LOCATION BELOW
     - name: Publish
       run: |-
         docker push "us-docker.pkg.dev/team5-cit262/seth-api/api-tests:latest"
