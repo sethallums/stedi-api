@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: prod-stedi-seth
-          image: us-docker.pkg.dev/team5-cit262/seth-api/stedi-api:latest # This image needs to refer to the NEW Artifact registry repositorry
+          image: us-docker.pkg.dev/team5-cit262/seth-api/stedi-api:latest # IMAGE NEEDS TO BE ARTIFACT REGISTRY NEW REPOSITORY
           env:
             - name: REDIS_PASSWORD
               valueFrom:
@@ -31,7 +31,7 @@ spec:
               value: "0"
             - name: KAFKA_BROKER
               value: "localhost:9092"
-              name: TWILIO_AUTH_TOKEN
+            - name: TWILIO_AUTH_TOKEN
               valueFrom:
                 secretKeyRef:
                   name: seth-twilio-dev
