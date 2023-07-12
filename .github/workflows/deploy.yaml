@@ -7,7 +7,6 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  CREDENTIALS_JSON: ${{ secrets.GKE_SA_KEY }}
   GKE_CLUSTER: team5-cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1-b   # Add your cluster zone here.
   DEPLOYMENT_NAME: seth-api # Add your deployment name here.
@@ -40,7 +39,7 @@ jobs:
 
     - uses: 'google-github-actions/auth@v1'
       with:
-        credentials_json: ${{ secrets.GKE_SA_KEY }}
+        credentials: ${{ secrets.GKE_SA_KEY }}
 
     # Get the GKE credentials so we can deploy to the cluster
     - uses: google-github-actions/get-gke-credentials@db150f2cc60d1716e61922b832eae71d2a45938f
