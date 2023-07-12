@@ -7,6 +7,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  CREDENTIALS_JSON: ${{ secrets.GKE_SA_KEY }}
   GKE_CLUSTER: team5-cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1-b   # Add your cluster zone here.
   DEPLOYMENT_NAME: seth-api # Add your deployment name here.
@@ -37,7 +38,7 @@ jobs:
     - run: |-
         gcloud --quiet auth configure-docker us-docker.pkg.dev
 
-    - uses: 'google-github-actions/auth@v0'
+    - uses: 'google-github-actions/auth@v1'
       with:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
 
