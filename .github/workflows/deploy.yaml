@@ -37,7 +37,7 @@ jobs:
     - run: |-
         gcloud --quiet auth configure-docker us-docker.pkg.dev
 
-    - uses: 'google-github-actions/auth@v0.4.0'
+    - uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
 
